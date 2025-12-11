@@ -219,26 +219,6 @@
       color: var(--ink-2);
     }
 
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .hero .lede {
-      margin-top: 4px;
-      color: var(--ink-3);
-      max-width: 900px;
-    }
-
-    .hero-meta {
-      min-width: 180px;
-      text-align: right;
-      color: var(--ink-3);
-    }
-
     button,
     .btn {
       cursor: pointer;

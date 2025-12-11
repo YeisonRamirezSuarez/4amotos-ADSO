@@ -46,10 +46,7 @@ vite.config.ts.timestamp-*
 # SvelteKit
 .svelte-kit/
 
-# PocketBase
-pocketbase/
-pocketbase/pb_data/
-*.db
+# PocketBase (tracked)
 
 # IDEs
 .vscode/

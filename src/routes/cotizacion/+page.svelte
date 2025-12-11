@@ -452,7 +452,6 @@
       color: #000;
     }
 
-    .hero,
     .layout,
     .summary,
     .list,

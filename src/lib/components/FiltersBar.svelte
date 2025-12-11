@@ -20,16 +20,17 @@
 
 <div class="filters">
   <div class="search-field">
-    <label>Buscar</label>
+    <label for="search-input">Buscar</label>
     <input
+      id="search-input"
       placeholder="Filtro por nombre o descripción"
       bind:value={search}
       on:keydown={(e) => e.key === 'Enter' && apply()}
     />
   </div>
   <div class="field">
-    <label>Categoría</label>
-    <select bind:value={categoria}>
+    <label for="categoria-select">Categoría</label>
+    <select id="categoria-select" bind:value={categoria}>
       <option value="">Todas</option>
       {#each categorias as cat}
         <option value={cat.id}>{cat.nombre}</option>
@@ -42,12 +43,12 @@
     </label>
   </div>
   <div class="field">
-    <label>Precio mínimo</label>
-    <input type="number" min="0" step="500" bind:value={precioMin} />
+    <label for="precio-min">Precio mínimo</label>
+    <input id="precio-min" type="number" min="0" step="500" bind:value={precioMin} />
   </div>
   <div class="field">
-    <label>Precio máximo</label>
-    <input type="number" min="0" step="500" bind:value={precioMax} />
+    <label for="precio-max">Precio máximo</label>
+    <input id="precio-max" type="number" min="0" step="500" bind:value={precioMax} />
   </div>
   <div class="actions">
     <button class="primary" type="button" on:click={apply} disabled={loading}>

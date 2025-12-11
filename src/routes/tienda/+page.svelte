@@ -390,9 +390,6 @@
     color: var(--ink-3);
   }
 
-  .meta .ok {
-    color: #16a34a;
-  }
 
   .pill.status {
     padding: 4px 10px;
