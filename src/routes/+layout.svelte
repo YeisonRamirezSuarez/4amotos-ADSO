@@ -98,16 +98,14 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
-		padding: 1.25rem 0 1.25rem;
-		height: 84px;
-		min-height: 84px;
+		padding: 1rem 1.5rem 0;
 		box-sizing: border-box;
 	}
 
 	.brand {
 		display: inline-flex;
 		align-items: center;
-		gap: 0;
+		gap: 0.05rem;
 		font-weight: 700;
 		letter-spacing: -0.01em;
 		white-space: nowrap;
@@ -117,7 +115,7 @@
 		border: 1px solid var(--border);
 		background: rgba(255, 255, 255, 0.08);
 		padding: 0.3rem 0.55rem;
-		margin-left: -2px;
+		margin-left: -55px;
 	}
 
 	.status.up {
@@ -133,9 +131,13 @@
 	}
 
 	.brand-logo {
-		height: 32px;
+		height: 48px;
 		width: auto;
 		display: block;
+	}
+
+	:global([data-theme='dark'] .brand-logo) {
+		filter: brightness(1.1) invert(1) saturate(0.8);
 	}
 
 	nav {
