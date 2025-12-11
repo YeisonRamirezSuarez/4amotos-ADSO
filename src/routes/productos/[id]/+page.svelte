@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { PageData } from './$types';
-  import { cartStore } from '$lib/stores/cart';
 
   export let data: PageData;
   const producto = data.producto;
@@ -24,8 +23,6 @@
     img.src = placeholderImage;
     imageSrc = placeholderImage;
   };
-
-  const add = () => cartStore.addItem(producto);
 </script>
 
 <svelte:head>
@@ -47,7 +44,6 @@
     <div class="actions">
       <a class="secondary" href="/productos">Volver</a>
       <a class="secondary" href={`/productos/${producto.id}/editar`}>Editar</a>
-      <button class="primary" type="button" on:click={add} disabled={!producto.disponible}>Añadir al carrito</button>
     </div>
   </div>
 
@@ -196,7 +192,6 @@
     align-items: center;
   }
 
-  .primary,
   .secondary {
     padding: 0.65rem 1rem;
     border-radius: 10px;
@@ -209,17 +204,6 @@
 
   .secondary {
     background: rgba(255, 255, 255, 0.03);
-  }
-
-  .primary {
-    background: linear-gradient(120deg, #2563eb, #1e3a8a);
-    color: #f8fafc;
-    border: none;
-  }
-
-  .primary:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
   }
 
   @media (max-width: 720px) {
