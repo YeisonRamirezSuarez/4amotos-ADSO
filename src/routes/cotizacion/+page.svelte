@@ -146,9 +146,9 @@
 
 <style>
   .quote-page {
-    max-width: 1600px;
+    max-width: 1200px;
     width: 100%;
-    margin: 32px auto 120px;
+    margin: 20px auto 120px;
     padding: 0 0 48px;
     color: var(--ink-2);
     display: flex;

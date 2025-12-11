@@ -59,16 +59,24 @@ export const repuestosService = {
 
     if (filters.nombre) conditions.push(`nombre ~ \"${filters.nombre}\"`);
     if (filters.categoria) conditions.push(`categoria = \"${filters.categoria}\"`);
+    if (filters.categoriaNombre) conditions.push(`categoria.nombre ~ \"${filters.categoriaNombre}\"`);
     if (filters.disponible !== undefined) conditions.push(`disponible = ${filters.disponible}`);
     if (filters.precio_min) conditions.push(`precio >= ${filters.precio_min}`);
     if (filters.precio_max) conditions.push(`precio <= ${filters.precio_max}`);
+    if (filters.marca) conditions.push(`marca ~ \"${filters.marca}\"`);
 
     if (conditions.length > 0) filter = conditions.join(' && ');
 
     const client = clientWithFetch(customFetch);
+    const options: Record<string, unknown> = { filter, expand: 'categoria' };
+
+    if (filters.sort) {
+      options.sort = filters.sort;
+    }
+
     const result = (await client
       .collection('repuestos')
-      .getList(page, perPage, { filter, expand: 'categoria' })) as unknown as ListResult<Repuesto>;
+      .getList(page, perPage, options)) as unknown as ListResult<Repuesto>;
     return result;
   },
 

@@ -30,7 +30,10 @@ export interface CartItem {
 export interface SearchFilters {
   nombre?: string;
   categoria?: string;
+  categoriaNombre?: string;
   precio_min?: number;
   precio_max?: number;
   disponible?: boolean;
+  marca?: string;
+  sort?: string;
 }

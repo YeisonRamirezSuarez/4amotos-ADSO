@@ -78,7 +78,7 @@
   <title>{pageTitle}</title>
 </svelte:head>
 
-<section class="panel" style="margin-top:1rem; display:flex; flex-direction:column; gap:1.25rem;">
+<section class="panel" style="margin:20px auto 120px; max-width:1200px; width:100%; display:flex; flex-direction:column; gap:1.25rem;">
   <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
     <div>
       <p class="pill">Nuevo producto</p>

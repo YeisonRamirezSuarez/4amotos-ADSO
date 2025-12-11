@@ -1,9 +1,10 @@
 @import '@fontsource/fira-mono';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0');
 
 :root {
   --font-body:
-    'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    'Manrope', 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'Fira Mono', monospace;
   --bg: #f8f9fb;
   --bg-2: #f3f4f6;
@@ -16,6 +17,18 @@
   --accent-2: #eab308;
   --border: #e5e7eb;
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  --nav-bg-1: var(--accent);
+  --nav-bg-2: var(--accent-2);
+  --nav-ink: #0b1222;
+  --nav-border: rgba(0, 0, 0, 0.08);
+  --nav-pill-bg: rgba(255, 255, 255, 0.14);
+  --nav-pill-hover: rgba(255, 255, 255, 0.22);
+  --footer-bg-1: var(--accent);
+  --footer-bg-2: var(--accent-2);
+  --footer-bottom-bg: var(--panel);
+  --footer-ink: var(--ink);
+  --footer-border: var(--border);
+  --footer-chip-bg: rgba(255, 255, 255, 0.2);
   color: var(--ink-2);
   font-family: var(--font-body);
   background: radial-gradient(circle at 20% 20%, rgba(250, 204, 21, 0.12), transparent 28%),
@@ -23,19 +36,31 @@
 }
 
 [data-theme='dark'] {
-  --bg: #0c0f17;
-  --bg-2: #0a0d14;
-  --panel: #0f172a;
-  --panel-soft: #111827;
-  --ink: #f8fafc;
-  --ink-2: #e2e8f0;
-  --ink-3: #94a3b8;
+  --bg: #0f1320;
+  --bg-2: #11182a;
+  --panel: #151d2f;
+  --panel-soft: #182235;
+  --ink: #f4f7fb;
+  --ink-2: #dde5f1;
+  --ink-3: #9fb0c7;
   --accent: #facc15;
   --accent-2: #eab308;
-  --border: rgba(255, 255, 255, 0.09);
-  --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
-  background: radial-gradient(circle at 16% 20%, rgba(250, 204, 21, 0.12), transparent 30%),
-    radial-gradient(circle at 70% 0%, rgba(37, 37, 37, 0.25), transparent 26%), var(--bg);
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 15px 50px rgba(0, 0, 0, 0.28);
+  --nav-bg-1: #0f1627;
+  --nav-bg-2: #10192d;
+  --nav-ink: var(--ink);
+  --nav-border: rgba(255, 255, 255, 0.16);
+  --nav-pill-bg: rgba(255, 255, 255, 0.08);
+  --nav-pill-hover: rgba(255, 255, 255, 0.14);
+  --footer-bg-1: #0f1627;
+  --footer-bg-2: #111c31;
+  --footer-bottom-bg: #0c1220;
+  --footer-ink: var(--ink-2);
+  --footer-border: rgba(255, 255, 255, 0.12);
+  --footer-chip-bg: rgba(255, 255, 255, 0.08);
+  background: radial-gradient(circle at 18% 24%, rgba(250, 204, 21, 0.10), transparent 34%),
+    radial-gradient(circle at 70% 6%, rgba(50, 72, 110, 0.3), transparent 30%), var(--bg);
 }
 
 * {

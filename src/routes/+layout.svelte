@@ -2,6 +2,7 @@
 	import '../app.css';
 	import { page } from '$app/stores';
 	import { pbStatusStore, pbHost } from '$lib/stores/pbStatus';
+	import StoreFooter from '$lib/components/StoreFooter.svelte';
 
 	const links = [
 		{ href: '/', label: 'Inicio' },
@@ -35,8 +36,9 @@
 </script>
 
 <div class="app">
-	<header class="shell nav">
-		<div class="brand">
+	<header class="nav">
+		<div class="shell nav-inner">
+			<div class="brand">
 			<img src="/logo.svg" alt="4AMotos" class="brand-logo" />
 			<span class={`pill status ${statusClass}`}>
 				{pbStatus === 'up' ? 'Live' : 'Offline'}
@@ -67,15 +69,14 @@
 				{/if}
 			</button>
 		</nav>
+		</div>
 	</header>
 
 	<main class="shell">
 		<slot />
 	</main>
 
-	<footer class="shell footer">
-		<span>PocketBase · SvelteKit · 2025</span>
-	</footer>
+	<StoreFooter />
 </div>
 
 <style>
@@ -87,18 +88,26 @@
 
 	.shell {
 		width: 100%;
-		max-width: 1600px;
+		max-width: 1200px;
 		margin: 0 auto;
 		padding: 1rem 1.5rem;
 		box-sizing: border-box;
 	}
 
 	.nav {
+		background: linear-gradient(120deg, var(--nav-bg-1), var(--nav-bg-2));
+		border-bottom: 1px solid var(--nav-border);
+		color: var(--nav-ink);
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.nav-inner {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
-		padding: 1rem 1.5rem 0;
+		padding: 1rem 1.5rem 0.75rem;
 		box-sizing: border-box;
 	}
 
@@ -112,10 +121,11 @@
 	}
 
 	.status {
-		border: 1px solid var(--border);
-		background: rgba(255, 255, 255, 0.08);
+		border: 1px solid var(--nav-border);
+		background: var(--nav-pill-bg);
 		padding: 0.3rem 0.55rem;
 		margin-left: -55px;
+		color: var(--nav-ink);
 	}
 
 	.status.up {
@@ -150,28 +160,29 @@
 	nav a {
 		padding: 0.5rem 0.85rem;
 		border-radius: 12px;
-		color: var(--ink-2);
+		color: var(--nav-ink);
 		text-decoration: none;
 		font-weight: 700;
 		line-height: 1;
-		transition: transform 120ms ease, background 150ms ease;
+		transition: transform 120ms ease, background 150ms ease, border-color 150ms ease;
 		border: 1px solid transparent;
+		background: var(--nav-pill-bg);
 	}
 
 	nav a:hover {
-		background: rgba(255, 255, 255, 0.06);
+		background: var(--nav-pill-hover);
 		transform: translateY(-1px);
 	}
 
 	nav a.active {
-		border-color: var(--border);
-		background: rgba(255, 255, 255, 0.04);
+		border-color: var(--nav-border);
+		background: var(--nav-pill-hover);
 	}
 
 	nav .ghost {
-		background: transparent;
-		border: 1px solid var(--border);
-		color: var(--ink);
+		background: var(--nav-pill-bg);
+		border: 1px solid var(--nav-border);
+		color: var(--nav-ink);
 		padding: 0.45rem 0.55rem;
 		border-radius: 12px;
 		display: inline-flex;
@@ -184,7 +195,7 @@
 	}
 
 	nav .ghost:hover {
-		background: rgba(0, 0, 0, 0.06);
+		background: var(--nav-pill-hover);
 		transform: translateY(-1px);
 	}
 
@@ -197,9 +208,15 @@
 	}
 
 	.cta {
-		background: linear-gradient(120deg, var(--accent), var(--accent-2));
-		color: #0b1222;
+		background: var(--ink);
+		color: var(--accent);
 		box-shadow: none;
+		border: 1px solid color-mix(in srgb, var(--ink) 40%, transparent);
+	}
+
+	.cta:hover {
+		background: var(--ink-2);
+		transform: translateY(-1px);
 	}
 
 	main {
@@ -207,6 +224,7 @@
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+		background: var(--bg);
 	}
 
 	.footer {
