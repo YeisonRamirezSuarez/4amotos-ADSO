@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="#0f172a"/>
+  <rect width="640" height="480" fill="url(#g)" opacity="0.8"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="120" y="120" width="400" height="240" rx="24" ry="24"/>
+    <path d="M190 300l70-80 60 70 50-60 80 90"/>
+    <circle cx="250" cy="200" r="35"/>
+  </g>
+  <text x="50%" y="90%" fill="#e2e8f0" font-family="'Segoe UI', 'Inter', sans-serif" font-size="26" font-weight="700" text-anchor="middle">
+    Imagen no disponible
+  </text>
+</svg>
